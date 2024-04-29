@@ -1,9 +1,8 @@
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     colorGroup: [],
-    colorHome: []
+    colorHome: [],
 };
 
 const colorSlice = createSlice({
@@ -15,14 +14,15 @@ const colorSlice = createSlice({
         },
         setColorHome: (state, action) => {
             state.colorHome = action.payload;
+            // Save colorHome to local storage
+            localStorage.setItem("colorHome", JSON.stringify(action.payload));
         },
-        
         clearColorGroup: (state) => {
             state.colorGroup = [];
-          },
+        },
     }
 });
 
-export const { addColor, setColorHome,clearColorGroup } = colorSlice.actions;
+export const { addColor, setColorHome, clearColorGroup } = colorSlice.actions;
 
 export default colorSlice.reducer;

@@ -23,7 +23,7 @@ function Setting() {
     const dispatch = useDispatch();
     const colorGroup = useSelector(state => state.color.colorGroup);
     const home = useSelector(state => state.color.colorHome);
-    console.log(home);
+    console.log("home",home);
     console.log("colorGroup", colorGroup);
 
     useEffect(() => {
